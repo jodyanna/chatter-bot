@@ -1,0 +1,9 @@
+# Dependencies
+/api/node_modules
+/client/node_modules
+
+# Other
+.DS_Store
+.idea/
+.env
+.env.default
