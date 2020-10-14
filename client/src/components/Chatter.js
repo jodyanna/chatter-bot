@@ -1,7 +1,9 @@
 import React, {useState, useEffect}  from 'react';
 
+import styles from './Chatter.module.css';
 
-export default function Chatter() {
+
+export default function Chatter(props) {
   const [state, setState] = useState("loading");
   const [data, setData] = useState("");
 
@@ -20,10 +22,12 @@ export default function Chatter() {
   }, []);
 
   return (
-    <div>
+    <section className={styles.section}
+             style={{width: props.width, height: props.height}}
+    >
       <p>{state}</p>
       <p>{data}</p>
-    </div>
+    </section>
   );
 }
 

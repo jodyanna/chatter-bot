@@ -7,3 +7,5 @@
 .idea/
 .env
 .env.default
+
+./client/src/img/pathfinder.jpg
