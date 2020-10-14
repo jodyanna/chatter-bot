@@ -6,14 +6,12 @@ import Chatter from "./components/Chatter";
 
 
 function App() {
-  const secWidth = window.innerWidth;
-  const secHeight = window.innerHeight;
 
   return (
-    <div>
-      <Listen width={secWidth} height={secHeight}/>
+    <div className={"app"}>
+      <Listen />
       <hr/>
-      <Chatter width={secWidth} height={secHeight}/>
+      <Chatter />
     </div>
   );
 }

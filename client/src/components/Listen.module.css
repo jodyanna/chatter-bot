@@ -7,5 +7,14 @@
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(73, 209, 255, 0.53);
+    width: 400px;
+    height: 100vh;
+
+    background-color: rgb(73, 209, 255);
+}
+
+@media only screen and (max-width: 480px) {
+    .section {
+        width: 100vw;
+    }
 }

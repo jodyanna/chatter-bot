@@ -5,9 +5,12 @@ export default function TextForm() {
   const [ count, setCount ] = useState(0);
   const [ text, setText ] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const validateForm = () => {
+    return count < 1 || count > 255
+  }
 
+  const handleSubmit = event => {
+    event.preventDefault();
     fetch('http://localhost:9000/listen', {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
@@ -15,18 +18,25 @@ export default function TextForm() {
     }).catch((error) => console.error('Error:', error));
   }
 
+  const handleChange = event => {
+    setCount(event.target.value.length);
+    setText(event.target.value);
+  }
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <textarea name="post"
                 cols={29}
                 rows={9}
-                onChange={e => {
-                  setCount(e.target.value.length);
-                  setText(e.target.value);
-                }}
+                onChange={handleChange}
       />
-      <span>{count}</span>
-      <input type="submit" value={"Submit"} />
+      <div>
+        <span style={{color: validateForm() ? "#ff0000" : "#000000"}}>{count}</span><span>/255</span>
+      </div>
+      <input type="submit"
+             value={"Submit"}
+             disabled={validateForm()}
+      />
     </form>
   );
 }
