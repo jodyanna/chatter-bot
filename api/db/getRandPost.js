@@ -7,7 +7,7 @@ exports.getRandPost = (req, res) => {
     if (err) throw err;
     res.json({
       status: "200",
-      data: data[0],
+      post: data[0],
       message: "Get rand post successful."
     });
   });
