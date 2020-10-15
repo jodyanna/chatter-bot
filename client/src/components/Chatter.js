@@ -11,7 +11,7 @@ const Section = styled.section`
   justify-content: center;
 
   width: 400px;
-  height: 100vh;
+  height: 100%;
 
   margin: 0;
   padding: 0;

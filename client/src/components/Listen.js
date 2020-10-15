@@ -4,6 +4,10 @@ import styled from "styled-components";
 import TextForm from "./TextForm";
 
 const Container = styled.div`
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -12,7 +16,7 @@ const Container = styled.div`
   justify-content: center;
 
   width: 400px;
-  height: 100vh;
+  height: 100px;
 
   background-color: rgb(73, 209, 255);
 
@@ -24,10 +28,17 @@ const Container = styled.div`
 
 
 export default function Listen() {
+  const [ isActive, setIsActive ] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  }
 
   return (
     <Container>
-      <TextForm />
+      <button onClick={handleClick} />
+      <TextForm isActive={isActive} />
     </Container>
   );
 }
+

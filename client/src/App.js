@@ -1,18 +1,33 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import styled from "styled-components";
 
 import Listen from './components/Listen';
 import Chatter from "./components/Chatter";
 
 
-function App() {
+const MainPage = styled.div`
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
 
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+`;
+
+
+function App() {
   return (
-    <div className={"app"}>
-      <Listen />
-      <hr/>
+    <MainPage>
       <Chatter />
-    </div>
+      <hr/>
+      <Listen />
+    </MainPage>
   );
 }
 
