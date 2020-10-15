@@ -6,8 +6,7 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const listenRouter = require('./routes/listen');
-const chatterRouter = require('./routes/chatter');
+const postsRouter = require('./routes/posts');
 const testAPIRouter = require('./routes/testAPI');
 
 const app = express();
@@ -24,8 +23,7 @@ app.use(cookieParser());
  */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/listen', listenRouter);
-app.use('/chatter', chatterRouter);
+app.use('/posts', postsRouter);
 app.use('/testAPI', testAPIRouter);
 
 

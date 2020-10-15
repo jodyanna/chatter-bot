@@ -23,11 +23,11 @@ const Form = styled.form`
 `;
 
 const TextArea = styled.textarea`
-  width: 95%;
+  width: 90%;
   height: 100px;
 
   margin: 1em;
-  padding: 0;
+  padding: 0.3em;
   
   font-family: inherit;
   font-size: inherit;
@@ -54,7 +54,7 @@ export default function TextForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch('http://localhost:9000/listen', {
+    fetch('http://localhost:9000/posts/add', {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({post: text}),

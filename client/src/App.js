@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from "styled-components";
 
-import Listen from './components/Listen';
-import Chatter from "./components/Chatter";
+import EditPost from './components/EditPost';
+import Feed from "./components/Feed";
 
 
 const MainPage = styled.div`
@@ -14,7 +14,7 @@ const MainPage = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   margin: 0;
   padding: 0;
@@ -28,9 +28,9 @@ const MainPage = styled.div`
 function App() {
   return (
     <MainPage>
-      <Chatter />
+      <Feed />
       <hr/>
-      <Listen />
+      <EditPost />
     </MainPage>
   );
 }

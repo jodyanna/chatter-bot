@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 import TextForm from "./TextForm";
@@ -30,7 +30,7 @@ const Button = styled.button`
 `;
 
 
-export default function Listen() {
+export default function EditPost() {
   const [ isActive, setIsActive ] = useState(false);
 
   const handleClick = () => {
