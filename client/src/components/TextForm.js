@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
-import styles from './TextForm.module.css';
+import styled from "styled-components";
+
+
+const Form = styled.form`
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+`;
+
 
 export default function TextForm() {
   const [ count, setCount ] = useState(0);
@@ -24,7 +41,7 @@ export default function TextForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <Form onSubmit={handleSubmit} >
       <textarea name="post"
                 cols={29}
                 rows={9}
@@ -37,6 +54,6 @@ export default function TextForm() {
              value={"Submit"}
              disabled={validateForm()}
       />
-    </form>
+    </Form>
   );
 }
