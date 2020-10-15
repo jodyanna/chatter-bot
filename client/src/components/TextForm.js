@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 
 const Form = styled.form`
+  position: fixed;
+  bottom: 100px;
+  z-index: 2;
+
   display: ${props => props.isActive ? "flex" : "none"};
   flex-direction: column;
 
@@ -10,9 +14,32 @@ const Form = styled.form`
   justify-content: center;
 
   width: 100%;
-  height: 300px;
+  height: fit-content;
 
   margin: 0;
+  padding: 0;
+  
+  background-color: rgb(73, 209, 255);
+`;
+
+const TextArea = styled.textarea`
+  width: 95%;
+  height: 100px;
+
+  margin: 1em;
+  padding: 0;
+  
+  font-family: inherit;
+  font-size: inherit;
+  
+  resize: none;
+`;
+
+const SubmitButton = styled.input`
+  width: 95%;
+  height: 50px;
+  
+  margin: 1em 0;
   padding: 0;
 `;
 
@@ -44,7 +71,7 @@ export default function TextForm(props) {
       onSubmit={handleSubmit}
       isActive={props.isActive}
     >
-      <textarea name="post"
+      <TextArea name="post"
                 cols={29}
                 rows={9}
                 onChange={handleChange}
@@ -53,7 +80,7 @@ export default function TextForm(props) {
         <span style={{color: validateForm() ? "#ff0000" : "#000000"}}>{count}</span>
         <span>/255</span>
       </div>
-      <input type="submit"
+      <SubmitButton type="submit"
              value={"Submit"}
              disabled={validateForm()}
       />

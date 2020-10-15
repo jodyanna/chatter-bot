@@ -18,6 +18,10 @@ const MainPage = styled.div`
 
   margin: 0;
   padding: 0;
+  
+  @media only screen and (max-width: 480px) {
+      width: 100vw;
+  }
 `;
 
 

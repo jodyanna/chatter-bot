@@ -8,9 +8,9 @@ const Section = styled.section`
   flex-direction: column;
 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  width: 400px;
+  width: 100%;
   height: 100%;
 
   margin: 0;
@@ -18,9 +18,6 @@ const Section = styled.section`
 
   background-color: rgb(248, 125, 196);
   
-  @media only screen and (max-width: 480px) {
-    width: 100vw;
-  }
 `;
 
 

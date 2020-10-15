@@ -15,15 +15,18 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 400px;
+  width: 100%;
   height: 100px;
 
   background-color: rgb(73, 209, 255);
+`;
 
-
-  @media only screen and (max-width: 480px) {
-      width: 100vw;
-  }
+const Button = styled.button`
+  width: 95%;
+  height: 50px;
+  
+  margin: 1em 0;
+  padding: 0;
 `;
 
 
@@ -36,7 +39,9 @@ export default function Listen() {
 
   return (
     <Container>
-      <button onClick={handleClick} />
+      <Button onClick={handleClick} >
+        {isActive ? "Hide" : "Show"}
+      </Button>
       <TextForm isActive={isActive} />
     </Container>
   );
