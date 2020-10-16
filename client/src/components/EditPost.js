@@ -3,6 +3,29 @@ import styled from "styled-components";
 
 import TextForm from "./TextForm";
 
+
+export default function EditPost() {
+  const [ isActive, setIsActive ] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  }
+
+  return (
+    <Container>
+      <Button onClick={handleClick} >
+        {isActive ? "Hide" : "Show"}
+      </Button>
+      <TextForm isActive={isActive} />
+    </Container>
+  );
+}
+
+
+/**
+ * Styled Components
+ */
+
 const Container = styled.div`
   position: fixed;
   bottom: 0;
@@ -28,22 +51,3 @@ const Button = styled.button`
   margin: 1em 0;
   padding: 0;
 `;
-
-
-export default function EditPost() {
-  const [ isActive, setIsActive ] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-  }
-
-  return (
-    <Container>
-      <Button onClick={handleClick} >
-        {isActive ? "Hide" : "Show"}
-      </Button>
-      <TextForm isActive={isActive} />
-    </Container>
-  );
-}
-

@@ -7,7 +7,6 @@ import Feed from "./components/Feed";
 
 const MainPage = styled.div`
   display: flex;
-  display: -webkit-flex;
   flex-direction: column;
 
   align-items: center;

@@ -6,7 +6,7 @@ const { getRandPosts } = require("../db/getRandPosts");
 
 
 
-router.get('/', (req, res, next) => {
+router.get('/rand-posts', (req, res, next) => {
   getRandPosts(req, res);
 });
 
