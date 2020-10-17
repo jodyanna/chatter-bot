@@ -10,7 +10,10 @@ export const Container = styled.div`
   margin: 1em;
   padding: 1vw;
   
-  background: #00ffa7;
-  border: #99ffa7 solid 2px;
+  background: #3282b8;
+  
+  border: #bbe1fa solid 2px;
   border-radius: 5px;
+  
+  word-wrap: break-word;
 `;

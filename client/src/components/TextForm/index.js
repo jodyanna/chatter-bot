@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, TextArea, SubmitButton } from "./style";
+import {Form, TextArea, SubmitButton, StatusRow, TextCounter} from "./style";
 import { PostSuccess } from "../PostSuccess";
 
 
@@ -46,14 +46,15 @@ export default function TextForm(props) {
                 onChange={handleChange}
                 value={text}
       />
-      <div>
-        <span style={{color: validateForm() ? "#ff0000" : "#000000"}}>{count}</span>
-        <span>/255</span>
-      </div>
-      <SubmitButton type="submit"
-             value={"Submit"}
-             disabled={validateForm()}
-      />
+      <StatusRow>
+        <TextCounter>
+          <span style={{color: validateForm() ? "#ff0000" : "inherit"}}>{count}</span>/255
+        </TextCounter>
+        <SubmitButton type="submit"
+                      value={"Send"}
+                      disabled={validateForm()}
+        />
+      </StatusRow>
       <PostSuccess isSent={isSent}>Posted</PostSuccess>
     </Form>
   );

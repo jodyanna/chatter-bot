@@ -12,6 +12,4 @@ export const Section = styled.section`
 
   margin: 0;
   padding: 0;
-
-  background-color: rgb(248, 125, 196);
 `;

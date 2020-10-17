@@ -24,7 +24,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px 5px 0 0;
   
-  background: rgb(73, 209, 255);
+  background: #0f4c75;
   
   color: inherit;
   font-family: inherit;

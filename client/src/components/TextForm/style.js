@@ -38,7 +38,7 @@ export const Form = styled.form`
   
   border-radius: 5px 5px 0 0;
   
-  background-color: rgb(73, 209, 255);
+  background: #0f4c75;
   
   transform: translateY(0);
   animation: ${props => props.isActive ? fadeIn : fadeOut} 200ms ease-in;
@@ -49,7 +49,7 @@ export const TextArea = styled.textarea`
   width: 90%;
   height: 100px;
 
-  margin: 1em;
+  margin: 1em 0 0.2em 0;
   padding: 0.3em;
   
   font-family: inherit;
@@ -60,12 +60,45 @@ export const TextArea = styled.textarea`
   resize: none;
 `;
 
-export const SubmitButton = styled.input`
-  width: 95%;
-  height: 50px;
+export const StatusRow = styled.div`
+  display: flex;
+  flex-direction: row;
   
-  margin: 1em 0;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 95%;
+  height: 40px;
+  
+  margin: 0;
+  padding: 0;
+`;
+
+export const TextCounter = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  
+  margin: 0.5em;
+  padding: 0;
+`;
+
+export const SubmitButton = styled.input`
+  width: fit-content;
+  
+  margin: 0.5em;
   padding: 0;
   
+  border: none;
   border-radius: 5px;
+  
+  background: none;
+  
+  font-family: inherit;
+  font-size: inherit;
+  
 `;
