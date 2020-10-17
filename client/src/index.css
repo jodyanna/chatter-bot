@@ -26,6 +26,18 @@ html, body, #root {
   padding: 0;
 }
 
+#root {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 hr {
   width: 100%;
 

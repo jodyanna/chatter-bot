@@ -12,7 +12,7 @@ const MainPage = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: 480px;
   height: 100%;
 
   margin: 0;
@@ -28,7 +28,6 @@ function App() {
   return (
     <MainPage>
       <Feed />
-      <hr/>
       <EditPost />
     </MainPage>
   );

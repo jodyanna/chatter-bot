@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import { Form, TextArea, SubmitButton } from "./style";
+import { PostSuccess } from "../PostSuccess";
 
 
 export default function TextForm(props) {
@@ -53,91 +54,7 @@ export default function TextForm(props) {
              value={"Submit"}
              disabled={validateForm()}
       />
-      <Success isSent={isSent}>Success!</Success>
+      <PostSuccess isSent={isSent}>Success!</PostSuccess>
     </Form>
   );
 }
-
-
-/**
- * Styled Components
- */
-
-const Form = styled.form`
-  position: fixed;
-  bottom: 100px;
-  z-index: 2;
-
-  display: ${props => props.isActive ? "flex" : "none"};
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: fit-content;
-
-  margin: 0;
-  padding: 0;
-  
-  background-color: rgb(73, 209, 255);
-`;
-
-const TextArea = styled.textarea`
-  width: 90%;
-  height: 100px;
-
-  margin: 1em;
-  padding: 0.3em;
-  
-  font-family: inherit;
-  font-size: inherit;
-  
-  border-radius: 5px;
-  
-  resize: none;
-`;
-
-const SubmitButton = styled.input`
-  width: 95%;
-  height: 50px;
-  
-  margin: 1em 0;
-  padding: 0;
-  
-  border-radius: 5px;
-`;
-
-const fadeInOut = keyframes`
-  0, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 70%;
-  }
-`;
-
-const Success = styled.div`
-  position: fixed;
-  bottom: 100px;
-  z-index: 4;
-  
-  display: ${props => props.isSent ? "flex" : "none"};
-  
-  align-items: center;
-  justify-content: center;
-  
-  font-size: 2em;
-
-  width: 100%;
-  height: 240px;
-  
-  background-color: #bfbfbf;
-  color: #ffffff;
-  
-  opacity: 0;
-  animation: 2s ${fadeInOut} ease-out;
-`;
-
-
-

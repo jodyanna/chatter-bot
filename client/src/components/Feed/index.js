@@ -1,7 +1,6 @@
 import React, { useState, useEffect }  from 'react';
-import styled from "styled-components";
-
-import PostCard from "./PostCard";
+import { Section } from "./style";
+import PostCard from "../PostCard";
 
 
 export default function Feed() {
@@ -39,25 +38,3 @@ export default function Feed() {
     </Section>
   );
 }
-
-
-/**
- * Styled Components
- */
-
-const Section = styled.section`
-  display: flex; display: -webkit-flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: flex-start;
-
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-  padding: 0;
-
-  background-color: rgb(248, 125, 196);
-  
-`;
