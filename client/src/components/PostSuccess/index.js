@@ -1,19 +1,18 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
-export const fadeInOut = keyframes`
-  0, 100% {
-    opacity: 0;
+const fadeInOut = keyframes`
+  0% {
+    opacity: 1;
   }
-  50% {
-    opacity: 70%;
+  100% {
+    opacity: 0;
   }
 `;
 
 export const PostSuccess = styled.div`
   position: fixed;
-  bottom: 100px;
-  z-index: 4;
+  z-index: 2;
   
   display: ${props => props.isSent ? "flex" : "none"};
   
@@ -22,12 +21,12 @@ export const PostSuccess = styled.div`
   
   font-size: 2em;
 
-  width: 100%;
+  width: inherit;
   height: 240px;
   
-  background-color: #bfbfbf;
+  background-color: rgb(73, 209, 255);
   color: #ffffff;
   
   opacity: 0;
-  animation: 2s ${fadeInOut} ease-out;
+  animation: 1.5s ${fadeInOut} ease-out;
 `;

@@ -54,7 +54,7 @@ export default function TextForm(props) {
              value={"Submit"}
              disabled={validateForm()}
       />
-      <PostSuccess isSent={isSent}>Success!</PostSuccess>
+      <PostSuccess isSent={isSent}>Posted</PostSuccess>
     </Form>
   );
 }

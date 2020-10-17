@@ -1,11 +1,30 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  0% {
+    transform: translateY(+100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(+100%);
+  }
+`;
 
 export const Form = styled.form`
   position: fixed;
-  bottom: 100px;
-  z-index: 2;
+  bottom: 9.2vh;
+  z-index: -1;
 
-  display: ${props => props.isActive ? "flex" : "none"};
+  display: flex;
+  visibility: ${props => props.isActive ? 'visible' : 'hidden'};
   flex-direction: column;
 
   align-items: center;
@@ -17,7 +36,13 @@ export const Form = styled.form`
   margin: 0;
   padding: 0;
   
+  border-radius: 5px 5px 0 0;
+  
   background-color: rgb(73, 209, 255);
+  
+  transform: translateY(0);
+  animation: ${props => props.isActive ? fadeIn : fadeOut} 200ms ease-in;
+  transition: visibility 200ms ease-in;
 `;
 
 export const TextArea = styled.textarea`
