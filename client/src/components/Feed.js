@@ -10,7 +10,7 @@ export default function Feed() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:9000/posts/rand-posts", {
+      const response = await fetch("http://localhost:9000/posts/recent", {
         method: 'GET',
       }).catch((error) => console.error('Error:', error));
 

@@ -17,7 +17,7 @@ export default function TextForm(props) {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({post: text}),
-    }).then(res => cleanUpForm())
+    }).then(() => cleanUpForm())
       .catch(error => console.error('Error:', error));
   }
 
