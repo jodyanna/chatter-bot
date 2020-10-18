@@ -16,7 +16,6 @@ router.get('/recent', (req, res, next) => {
 });
 
 
-
 router.post('/add', (req, res, next) => {
   addPost(req, res);
 });

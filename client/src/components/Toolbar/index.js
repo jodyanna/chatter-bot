@@ -4,6 +4,8 @@ import { ButtonContainer, Container } from './style';
 import EditButton from "../EditButton";
 import TextForm from "../TextForm";
 
+import editLogo from '../../img/icons/edit.png';
+
 
 export default function Toolbar() {
   const [ isActive, setIsActive ] = useState(false);
@@ -15,7 +17,7 @@ export default function Toolbar() {
   return (
     <Container>
       <ButtonContainer>
-        <EditButton handleClick={handleClick} isActive={isActive} />
+        <EditButton logo={editLogo} handleClick={handleClick} isActive={isActive} />
 
       </ButtonContainer>
       <TextForm isActive={isActive} />

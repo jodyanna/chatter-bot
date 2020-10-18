@@ -12,7 +12,7 @@ export const Container = styled.div`
   
   background: #3282b8;
   
-  border: #bbe1fa solid 2px;
+  border: #0f4c75 solid 2px;
   border-radius: 5px;
   
   word-wrap: break-word;

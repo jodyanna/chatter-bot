@@ -88,8 +88,6 @@ export const TextCounter = styled.div`
 `;
 
 export const SubmitButton = styled.input`
-  width: fit-content;
-  
   margin: 0.5em;
   padding: 0;
   
@@ -100,6 +98,7 @@ export const SubmitButton = styled.input`
   
   font-family: inherit;
   font-size: inherit;
+  font-weight: bold;
     
   color: #3282b8;
   

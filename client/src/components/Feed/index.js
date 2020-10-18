@@ -27,7 +27,7 @@ export default function Feed() {
   const renderPostCards = isLoading => {
     if (isLoading) return "loading..."
     else return data.posts.map((post, index) => {
-      return <PostCard key={index} text={post.post_text} date={post.post_date}/>
+      return <PostCard key={index} text={post.content} date={post.date}/>
     })
   }
 
