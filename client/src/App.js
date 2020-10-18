@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
-import EditPost from './components/EditPost';
+import Toolbar from "./components/Toolbar";
 import Feed from "./components/Feed";
 
 
@@ -30,7 +30,7 @@ function App() {
   return (
     <MainPage>
       <Feed />
-      <EditPost />
+      <Toolbar />
     </MainPage>
   );
 }

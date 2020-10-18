@@ -34,7 +34,7 @@ export default function Feed() {
   return (
     <Section>
       {renderPostCards(isLoading)}
-      <div style={{height: "100px"}} /* Blank space offset for EditPost fixed footer */ />
+      <div style={{height: "100px"}} /* Blank space offset for EditButton fixed footer */ />
     </Section>
   );
 }

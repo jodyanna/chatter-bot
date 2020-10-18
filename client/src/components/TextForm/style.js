@@ -38,7 +38,7 @@ export const Form = styled.form`
   
   border-radius: 5px 5px 0 0;
   
-  background: #0f4c75;
+  background: #1b262c;
   
   transform: translateY(0);
   animation: ${props => props.isActive ? fadeIn : fadeOut} 200ms ease-in;
@@ -100,5 +100,15 @@ export const SubmitButton = styled.input`
   
   font-family: inherit;
   font-size: inherit;
+    
+  color: #3282b8;
   
+  &:disabled {
+    color: grey;
+    cursor: not-allowed;
+  }
+  
+  &:hover:enabled {
+    cursor: pointer;
+  }
 `;

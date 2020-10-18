@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Button } from "./style";
+import { ButtonContainer, Container } from './style';
+
+import EditButton from "../EditButton";
 import TextForm from "../TextForm";
 
 
-export default function EditPost() {
+export default function Toolbar() {
   const [ isActive, setIsActive ] = useState(false);
 
   const handleClick = () => {
@@ -12,9 +14,10 @@ export default function EditPost() {
 
   return (
     <Container>
-      <Button onClick={handleClick} >
-        {isActive ? "Hide" : "Show"}
-      </Button>
+      <ButtonContainer>
+        <EditButton handleClick={handleClick} isActive={isActive} />
+
+      </ButtonContainer>
       <TextForm isActive={isActive} />
     </Container>
   );
