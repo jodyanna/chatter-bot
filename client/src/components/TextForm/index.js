@@ -16,8 +16,11 @@ export default function TextForm(props) {
     event.preventDefault();
     fetch('http://localhost:9000/posts/add', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json',},
-      body: JSON.stringify({post: text}),
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        post: text,
+        room: {id: props.room.room_id}
+      }),
     }).then(() => cleanUpForm())
       .catch(error => console.error('Error:', error));
   }

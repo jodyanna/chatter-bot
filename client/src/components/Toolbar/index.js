@@ -11,7 +11,7 @@ import openDoorLogo from '../../img/icons/open-door.png';
 import {ToolbarWindow} from "../ToolbarWindow";
 
 
-export default function Toolbar() {
+export default function Toolbar(props) {
   const [ isActiveEdit, setIsActiveEdit ] = useState(false);
   const [ isActiveRoom, setIsActiveRoom ] = useState(false);
 
@@ -28,12 +28,15 @@ export default function Toolbar() {
         <ToolbarButton logo={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
         <ToolbarButton logo={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
       </ButtonContainer>
+
       <ToolbarWindow isActive={isActiveEdit}>
-        <TextForm />
+        <TextForm room={props.room} />
       </ToolbarWindow>
+
       <ToolbarWindow isActive={isActiveRoom}>
-        <RoomNav />
+        <RoomNav handleClick={props.handleClick} />
       </ToolbarWindow>
+
     </Container>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 import Toolbar from "./components/Toolbar";
@@ -27,10 +27,15 @@ const MainPage = styled.div`
 
 
 function App() {
+  const [ currentRoom, setCurrentRoom ] = useState({name: "no_name", room_id: "1"});
+
+  const handleRoomChange = room => setCurrentRoom(room)
+
   return (
     <MainPage>
-      <Feed />
-      <Toolbar />
+      <div>{currentRoom.name}</div>
+      <Feed room={currentRoom} />
+      <Toolbar room={currentRoom} handleClick={handleRoomChange} />
     </MainPage>
   );
 }
