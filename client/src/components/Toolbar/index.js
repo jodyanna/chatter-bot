@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import { ButtonContainer, Container } from './style';
 
-import EditButton from "../EditButton";
-import TextForm from "../TextForm";
+import ToolbarButton from '../ToolbarButton';
+import TextForm from '../TextForm';
+import RoomNav from "../RoomNav";
 
 import editLogo from '../../img/icons/edit.png';
+import closedDoorLogo from '../../img/icons/door-closed.png';
+import openDoorLogo from '../../img/icons/open-door.png';
 
 
 export default function Toolbar() {
-  const [ isActive, setIsActive ] = useState(false);
+  const [ isActiveEdit, setIsActiveEdit ] = useState(false);
+  const [ isActiveRoom, setIsActiveRoom ] = useState(false);
 
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const handleClickEdit = () => {
+    setIsActiveEdit(!isActiveEdit);
+  }
+  const handleClickRoom = () => {
+    setIsActiveRoom(!isActiveRoom);
   }
 
   return (
     <Container>
       <ButtonContainer>
-        <EditButton logo={editLogo} handleClick={handleClick} isActive={isActive} />
-
+        <ToolbarButton logo={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
+        <ToolbarButton logo={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
       </ButtonContainer>
-      <TextForm isActive={isActive} />
+      <TextForm isActive={isActiveEdit} />
+      <RoomNav isActive={isActiveRoom} />
     </Container>
   );
 }

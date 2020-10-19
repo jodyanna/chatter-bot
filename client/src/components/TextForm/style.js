@@ -1,22 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { fadeIn, fadeOut } from "../Animations";
 
-const fadeIn = keyframes`
-  0% {
-    transform: translateY(+100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
-
-const fadeOut = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(+100%);
-  }
-`;
 
 export const Form = styled.form`
   position: fixed;

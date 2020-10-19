@@ -7,7 +7,7 @@ exports.getAllRooms = (req, res) => {
     if (err) throw err;
     res.json({
       status: "200",
-      posts: data,
+      rooms: data,
       message: "Get all room names successful."
     });
   });

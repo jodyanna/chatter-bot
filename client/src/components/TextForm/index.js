@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {Form, TextArea, SubmitButton, StatusRow, TextCounter} from "./style";
-import { PostSuccess } from "../PostSuccess";
+import { Form, TextArea, SubmitButton, StatusRow, TextCounter } from './style';
+import { PostSuccess } from '../PostSuccess';
 
 
 export default function TextForm(props) {

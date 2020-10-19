@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  
-`;
 
 export const Button = styled.button`
   width: auto%;
   height: auto%;
   
-  margin: 0;
+  margin: 0 0.5em;
   padding: 0;
   
   border: none;
