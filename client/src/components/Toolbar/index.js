@@ -8,6 +8,7 @@ import RoomNav from "../RoomNav";
 import editLogo from '../../img/icons/edit.png';
 import closedDoorLogo from '../../img/icons/door-closed.png';
 import openDoorLogo from '../../img/icons/open-door.png';
+import {ToolbarWindow} from "../ToolbarWindow";
 
 
 export default function Toolbar() {
@@ -27,8 +28,12 @@ export default function Toolbar() {
         <ToolbarButton logo={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
         <ToolbarButton logo={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
       </ButtonContainer>
-      <TextForm isActive={isActiveEdit} />
-      <RoomNav isActive={isActiveRoom} />
+      <ToolbarWindow isActive={isActiveEdit}>
+        <TextForm />
+      </ToolbarWindow>
+      <ToolbarWindow isActive={isActiveRoom}>
+        <RoomNav />
+      </ToolbarWindow>
     </Container>
   );
 }

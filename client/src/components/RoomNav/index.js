@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Container, List, ListItem } from "./style";
+import { List, ListItem } from "./style";
 
 
-export default function RoomNav(props) {
+export default function RoomNav() {
   const [ isLoading, setIsLoading ] = useState(true);
   const [ data, setData ] = useState({rooms: []});
 
@@ -35,10 +35,8 @@ export default function RoomNav(props) {
   }
 
   return (
-    <Container isActive={props.isActive}>
-      <List>
-        {renderRooms()}
-      </List>
-    </Container>
+    <List>
+      {renderRooms()}
+    </List>
   )
 }
