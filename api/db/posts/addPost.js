@@ -1,6 +1,6 @@
-const db = require("./dbConnect");
+const db = require("../dbConnect");
 
-// Add post to database
+
 exports.addPost = (req, res) => {
   const sql = `INSERT INTO posts (content, room_id) VALUES (?, ?);`;
   db.query(sql, [req.body.post, req.body.room.id], err => {
@@ -10,5 +10,4 @@ exports.addPost = (req, res) => {
       message: "Insert post successful."
     });
   });
-
 }

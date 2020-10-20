@@ -14,7 +14,7 @@ export const ToolbarWindow = styled.form`
   justify-content: center;
 
   width: inherit;
-  height: fit-content;
+  height: 200px;
 
   margin: 0;
   padding: 0;

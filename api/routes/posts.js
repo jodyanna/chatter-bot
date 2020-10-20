@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const { addPost } = require('../db/addPost');
-const { getRandPosts } = require("../db/getRandPosts");
-const { getRecentPosts } = require('../db/getRecentPosts');
+const { addPost } = require('../db/posts/addPost');
+const { getRandPosts } = require("../db/posts/getRandPosts");
+const { getRecentPosts } = require('../db/posts/getRecentPosts');
 
 
 

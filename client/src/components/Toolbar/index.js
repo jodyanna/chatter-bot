@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { ButtonContainer, Container } from './style';
 
 import ToolbarButton from '../ToolbarButton';
-import TextForm from '../TextForm';
+import PostForm from '../PostForm';
 import RoomNav from "../RoomNav";
 
 import editLogo from '../../img/icons/edit.png';
 import closedDoorLogo from '../../img/icons/door-closed.png';
 import openDoorLogo from '../../img/icons/open-door.png';
 import {ToolbarWindow} from "../ToolbarWindow";
+import RoomForm from "../RoomForm";
 
 
 export default function Toolbar(props) {
@@ -30,10 +31,11 @@ export default function Toolbar(props) {
       </ButtonContainer>
 
       <ToolbarWindow isActive={isActiveEdit}>
-        <TextForm room={props.room} />
+        <PostForm room={props.room} />
       </ToolbarWindow>
 
       <ToolbarWindow isActive={isActiveRoom}>
+        <RoomForm />
         <RoomNav handleClick={props.handleClick} />
       </ToolbarWindow>
 

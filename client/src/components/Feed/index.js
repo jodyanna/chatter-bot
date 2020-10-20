@@ -17,7 +17,6 @@ export default function Feed(props) {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data)
         return Promise.resolve(data)
       } else {
         return Promise.reject("Could not connect to API.")

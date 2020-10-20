@@ -3,7 +3,7 @@ import { Form, TextArea, SubmitButton, StatusRow, TextCounter } from './style';
 import { PostSuccess } from '../PostSuccess';
 
 
-export default function TextForm(props) {
+export default function PostForm(props) {
   const [ count, setCount ] = useState(0);
   const [ text, setText ] = useState("");
   const [ isSent, setIsSent ] = useState(false);
