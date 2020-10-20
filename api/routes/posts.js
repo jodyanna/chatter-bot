@@ -11,7 +11,7 @@ router.get('/random', (req, res, next) => {
   getRandPosts(req, res);
 });
 
-router.get('/recent', (req, res, next) => {
+router.post('/recent', (req, res, next) => {
   getRecentPosts(req, res);
 });
 

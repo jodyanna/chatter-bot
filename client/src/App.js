@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import Toolbar from "./components/Toolbar";
@@ -13,7 +13,7 @@ const MainPage = styled.div`
   justify-content: center;
 
   width: 480px;
-  height: 100%;
+  height: 100vh;
 
   margin: 0;
   padding: 0;
