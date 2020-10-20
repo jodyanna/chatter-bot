@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { ButtonContainer, Container } from './style';
 
-import ToolbarButton from '../ToolbarButton';
+import IconButton from '../IconButton';
 import PostForm from '../PostForm';
-import RoomNav from "../RoomNav";
 
 import editLogo from '../../img/icons/edit.png';
 import closedDoorLogo from '../../img/icons/door-closed.png';
-import openDoorLogo from '../../img/icons/open-door.png';
-import {ToolbarWindow} from "../ToolbarWindow";
+import { ToolbarWindow } from "../ToolbarWindow";
 import RoomForm from "../RoomForm";
 
 
@@ -26,17 +24,16 @@ export default function Toolbar(props) {
   return (
     <Container>
       <ButtonContainer>
-        <ToolbarButton logo={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
-        <ToolbarButton logo={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
+        <IconButton icon={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
+        <IconButton icon={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
       </ButtonContainer>
 
-      <ToolbarWindow isActive={isActiveEdit}>
+      <ToolbarWindow isActive={isActiveEdit} isUp={true}>
         <PostForm room={props.room} />
       </ToolbarWindow>
 
-      <ToolbarWindow isActive={isActiveRoom}>
+      <ToolbarWindow isActive={isActiveRoom} isUp={true}>
         <RoomForm />
-        <RoomNav handleClick={props.handleClick} />
       </ToolbarWindow>
 
     </Container>

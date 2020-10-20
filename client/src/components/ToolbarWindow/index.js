@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { fadeIn, fadeOut } from "../Animations";
+import { fadeInUp, fadeOutUp, fadeInDown, fadeOutDown } from "../Animations";
 
+// props.isUp boolean will make the window 'drop up' instead of down.
 export const ToolbarWindow = styled.div`
   position: fixed;
-  bottom: 9.2vh;
+  ${props => props.isUp ? 'bottom: 96px;' : 'top: 96px;'};
   z-index: -1;
 
   display: flex;
@@ -14,7 +15,7 @@ export const ToolbarWindow = styled.div`
   justify-content: center;
 
   width: inherit;
-  height: 200px;
+  height: 198px;
 
   margin: 0;
   padding: 0;
@@ -24,6 +25,9 @@ export const ToolbarWindow = styled.div`
   background: #1b262c;
   
   transform: translateY(0);
-  animation: ${props => props.isActive ? fadeIn : fadeOut} 200ms ease-in;
+  animation: ${props => {
+    if (props.isUp) return props.isActive ?  fadeInUp : fadeOutUp
+    else return props.isActive ?  fadeInDown : fadeOutDown
+  }} 200ms ease-in;
   transition: visibility 200ms ease-in;
 `;

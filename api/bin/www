@@ -20,7 +20,7 @@ app.set('port', port);
 const server = http.createServer(app);
 
 /**
- * ToolbarButton on provided port, on all network interfaces.
+ * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port);

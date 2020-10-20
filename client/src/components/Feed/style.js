@@ -17,9 +17,14 @@ export const Section = styled.section`
 `;
 
 export const Filler = styled.div`
+  position: absolute;
+  
+  display: block;
+  
   width: 100%;
   height: 100px;
   
   background: #1b262c;
   content: none;
+  visibility: hidden;
 `;

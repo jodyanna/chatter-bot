@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: fixed;
+  position: sticky;
   bottom: 0;
   
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   
   align-items: center;
   justify-content: center;
   
   width: inherit;
-  height: 10vh;
+  height: 100px;
 `;
 
 export const ButtonContainer = styled.div`  

@@ -34,9 +34,9 @@ function App() {
 
   return (
     <MainPage>
-      <Header room={currentRoom.name} />
+      <Header room={currentRoom.name} handleClick={handleRoomChange} />
       <Feed room={currentRoom} />
-      <Toolbar room={currentRoom} handleClick={handleRoomChange} />
+      <Toolbar room={currentRoom}  />
     </MainPage>
   );
 }

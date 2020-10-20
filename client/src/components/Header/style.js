@@ -6,6 +6,7 @@ export const Container = styled.header`
   
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   
   align-items: center;
   justify-content: center;
@@ -15,6 +16,19 @@ export const Container = styled.header`
   
   margin: 0.3em;
   padding: 0;
+  
+  background: #1b262c;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  justify-content: flex-start;
+  
+  width: 100%;
+  height: 100%;
   
   background: #1b262c;
 `;
