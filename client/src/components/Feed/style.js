@@ -12,4 +12,14 @@ export const Section = styled.section`
 
   margin: 0;
   padding: 0;
+  
+  overflow: scroll;
+`;
+
+export const Filler = styled.div`
+  width: 100%;
+  height: 100px;
+  
+  background: #1b262c;
+  content: none;
 `;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { fadeIn, fadeOut } from "../Animations";
 
 
 export const Form = styled.form`

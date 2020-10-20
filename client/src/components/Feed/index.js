@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import { Section } from "./style";
+import {Filler, Section} from "./style";
 import PostCard from "../PostCard";
 
 
@@ -36,7 +36,6 @@ export default function Feed(props) {
   return (
     <Section>
       {renderPostCards(isLoading)}
-      <div style={{height: "100px"}} /* Blank space offset for ToolbarButton fixed footer */ />
     </Section>
   );
 }

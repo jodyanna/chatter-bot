@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { fadeIn, fadeOut } from "../Animations";
 
-export const ToolbarWindow = styled.form`
+export const ToolbarWindow = styled.div`
   position: fixed;
   bottom: 9.2vh;
   z-index: -1;

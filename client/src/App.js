@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
+import Header from "./components/Header";
 import Toolbar from "./components/Toolbar";
 import Feed from "./components/Feed";
 
@@ -12,7 +13,7 @@ const MainPage = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 480px;
+  width: 100vw;
   height: 100vh;
 
   margin: 0;
@@ -21,7 +22,7 @@ const MainPage = styled.div`
   background: #1b262c;
   
   @media only screen and (max-width: 480px) {
-      width: 100vw;
+      
   }
 `;
 
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <MainPage>
-      <div>{currentRoom.name}</div>
+      <Header room={currentRoom.name} />
       <Feed room={currentRoom} />
       <Toolbar room={currentRoom} handleClick={handleRoomChange} />
     </MainPage>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {Form, TextInput} from './style';
+import { Form, TextInput } from './style';
 import { PostSuccess } from '../PostSuccess';
-import {SubmitButton} from "../PostForm/style";
+import { SubmitButton } from "./style";
 
 
 export default function RoomForm(props) {
@@ -24,7 +24,7 @@ export default function RoomForm(props) {
     setText(event.target.value);
   }
 
-  const validateForm = () => text.length < 1 || text.length > 255
+  const validateForm = () => text.length < 1 || text.length > 50
 
   const cleanUpForm = () => {
     // Init form and show success message
