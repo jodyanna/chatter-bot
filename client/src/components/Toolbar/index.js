@@ -4,37 +4,75 @@ import { ButtonContainer, Container } from './style';
 import IconButton from '../IconButton';
 import PostForm from '../PostForm';
 
-import editLogo from '../../img/icons/edit.png';
-import closedDoorLogo from '../../img/icons/door-closed.png';
-import { ToolbarWindow } from "../ToolbarWindow";
+import editIcon from '../../img/icons/edit.png';
+import closedDoorIcon from '../../img/icons/door-closed.png';
+import settingsIcon from '../../img/icons/settings.png';
+import userIcon from '../../img/icons/user.png';
+import { HiddenWindow } from "../HiddenWindow";
 import RoomForm from "../RoomForm";
 
 
 export default function Toolbar(props) {
+  const [ isActiveUser, setIsActiveUser ] = useState(false);
   const [ isActiveEdit, setIsActiveEdit ] = useState(false);
   const [ isActiveRoom, setIsActiveRoom ] = useState(false);
+  const [ isActiveSettings, setIsActiveSettings ] = useState(false);
+
+  const handleClickUser = () => {
+    initAllState();
+    setIsActiveUser(!isActiveUser);
+  }
 
   const handleClickEdit = () => {
+    initAllState();
     setIsActiveEdit(!isActiveEdit);
   }
+
   const handleClickRoom = () => {
+    initAllState();
     setIsActiveRoom(!isActiveRoom);
+  }
+
+  const handleClickSettings = () => {
+    initAllState();
+    setIsActiveSettings(!isActiveSettings);
+  }
+
+  const initAllState = () => {
+    setIsActiveUser(false);
+    setIsActiveEdit(false);
+    setIsActiveRoom(false);
+    setIsActiveSettings(false);
   }
 
   return (
     <Container>
       <ButtonContainer>
-        <IconButton icon={editLogo} handleClick={handleClickEdit} isActive={isActiveEdit} />
-        <IconButton icon={closedDoorLogo} handleClick={handleClickRoom} isActive={isActiveRoom} />
+        <IconButton icon={userIcon}
+                    handleClick={handleClickUser}
+                    isActive={isActiveUser}
+        />
+        <IconButton icon={editIcon}
+                    handleClick={handleClickEdit}
+                    isActive={isActiveEdit}
+        />
+        <IconButton icon={closedDoorIcon}
+                    handleClick={handleClickRoom}
+                    isActive={isActiveRoom}
+        />
+        <IconButton icon={settingsIcon}
+                    handleClick={handleClickSettings}
+                    isActive={isActiveSettings}
+        />
       </ButtonContainer>
 
-      <ToolbarWindow isActive={isActiveEdit} isUp={true}>
+      <HiddenWindow isActive={isActiveEdit} isUp={true}>
         <PostForm room={props.room} />
-      </ToolbarWindow>
+      </HiddenWindow>
 
-      <ToolbarWindow isActive={isActiveRoom} isUp={true}>
+      <HiddenWindow isActive={isActiveRoom} isUp={true}>
         <RoomForm />
-      </ToolbarWindow>
+      </HiddenWindow>
 
     </Container>
   );

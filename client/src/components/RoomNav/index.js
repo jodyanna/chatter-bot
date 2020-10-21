@@ -7,15 +7,19 @@ export default function RoomNav(props) {
   const [ data, setData ] = useState({rooms: []});
 
   useEffect(() => {
-
     fetchAllRooms().then(res => setData(res));
     setIsLoading(false);
   }, []);
 
+  const handleClick = room => {
+    props.handlePropsClick(room);
+    props.handleClick();
+  }
+
   const renderRooms = () => {
     if (isLoading) return "Loading..."
     else return data.rooms.map((room, index) => {
-      return <ListItem key={index} onClick={() => props.handleClick(room)}>{room.name}</ListItem>
+      return <ListItem key={index} onClick={() => handleClick(room)}>{room.name}</ListItem>
     })
   }
 

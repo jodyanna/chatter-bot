@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { fadeInUp, fadeOutUp, fadeInDown, fadeOutDown } from "../Animations";
 
 // props.isUp boolean will make the window 'drop up' instead of down.
-export const ToolbarWindow = styled.div`
+export const HiddenWindow = styled.div`
   position: fixed;
   ${props => props.isUp ? 'bottom: 96px;' : 'top: 96px;'};
   z-index: -1;

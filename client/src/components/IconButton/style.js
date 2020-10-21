@@ -13,7 +13,7 @@ export const Button = styled.button`
   margin: 0 0.5em;
   padding: 0;
   
-  border: none;
+  border: solid 3px ${props => props.isActive ? "#ffffff" : "transparent"};
   border-radius: 5px;
   
   background: #0f4c75;

@@ -41,7 +41,7 @@ export const ListItem = styled.li`
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
-
+    
   color: #3282b8;
 
   list-style: none;

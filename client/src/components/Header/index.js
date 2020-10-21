@@ -4,7 +4,7 @@ import arrow from "../../img/icons/expand-arrow.png";
 
 import RoomNav from "../RoomNav";
 import IconButton from "../IconButton";
-import { ToolbarWindow } from "../ToolbarWindow";
+import { HiddenWindow } from "../HiddenWindow";
 
 
 export default function Header(props) {
@@ -15,12 +15,18 @@ export default function Header(props) {
   return (
     <Container>
       <Row>
-        <IconButton icon={arrow} handleClick={handleClick} isActive={isActive} />
+        <IconButton icon={arrow}
+                    handleClick={handleClick}
+                    isActive={isActive}
+        />
         <H2>{props.room}</H2>
       </Row>
-      <ToolbarWindow isActive={isActive} isUp={false}>
-        <RoomNav handleClick={props.handleClick} isActive={isActive}/>
-      </ToolbarWindow>
+      <HiddenWindow isActive={isActive} isUp={false}>
+        <RoomNav handlePropsClick={props.handleClick}
+                 handleClick={handleClick}
+                 isActive={isActive}
+        />
+      </HiddenWindow>
     </Container>
   )
 }
