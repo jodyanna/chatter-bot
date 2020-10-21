@@ -14,7 +14,7 @@ export const Container = styled.header`
   width: 96%;
   height: 100px;
   
-  margin: 0.3em;
+  margin: 0;
   padding: 0;
   
   background: #1b262c;

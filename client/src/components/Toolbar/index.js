@@ -10,6 +10,7 @@ import settingsIcon from '../../img/icons/settings.png';
 import userIcon from '../../img/icons/user.png';
 import { HiddenWindow } from "../HiddenWindow";
 import RoomForm from "../RoomForm";
+import UserSettings from "../UserSettings";
 
 
 export default function Toolbar(props) {
@@ -66,12 +67,20 @@ export default function Toolbar(props) {
         />
       </ButtonContainer>
 
+      <HiddenWindow isActive={isActiveUser} isUp={true}>
+        <UserSettings user={props.user} />
+      </HiddenWindow>
+
       <HiddenWindow isActive={isActiveEdit} isUp={true}>
         <PostForm room={props.room} />
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveRoom} isUp={true}>
         <RoomForm />
+      </HiddenWindow>
+
+      <HiddenWindow isActive={isActiveSettings} isUp={true}>
+
       </HiddenWindow>
 
     </Container>

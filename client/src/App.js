@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import Toolbar from "./components/Toolbar";
 import Feed from "./components/Feed";
+import userEvent from "@testing-library/user-event";
 
 
 const MainPage = styled.div`
@@ -28,15 +29,17 @@ const MainPage = styled.div`
 
 
 function App() {
+  const [ currentUser, setCurrentUser ] = useState({name: "anonymous", user_id: "1"});
   const [ currentRoom, setCurrentRoom ] = useState({name: "no_name", room_id: "1"});
 
+  const handleUserChange = user => setCurrentUser(user)
   const handleRoomChange = room => setCurrentRoom(room)
 
   return (
     <MainPage>
       <Header room={currentRoom.name} handleClick={handleRoomChange} />
-      <Feed room={currentRoom} />
-      <Toolbar room={currentRoom}  />
+      <Feed user={currentUser} room={currentRoom} />
+      <Toolbar user={currentUser} room={currentRoom} handleClick={handleUserChange} />
     </MainPage>
   );
 }
