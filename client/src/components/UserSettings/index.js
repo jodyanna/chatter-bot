@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, ProfilePic, Text, TextRow} from "./style";
-import userIcon from '../../img/icons/user.png';
+import userIcon from '../../img/icons/user-96.png';
 
 
 export default function UserSettings(props) {

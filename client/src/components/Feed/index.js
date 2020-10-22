@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import {Filler, Section} from "./style";
+import {Filler, Section, StatusText} from "./style";
 import PostCard from "../PostCard";
 
 
@@ -28,6 +28,7 @@ export default function Feed(props) {
 
   const renderPostCards = isLoading => {
     if (isLoading) return "loading..."
+    else if (data.posts.length < 1 || data.posts.length === undefined) return <StatusText>This room is empty</StatusText>
     else return data.posts.map((post, index) => {
       return <PostCard key={index} text={post.content} date={post.date} />
     })

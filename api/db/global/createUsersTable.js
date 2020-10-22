@@ -1,14 +1,13 @@
 const db = require("../dbConnect");
 
 
-const sql = `CREATE TABLE rooms (
+const sql = `CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR(255), 
-  date DATETIME DEFAULT CURRENT_TIMESTAMP,
-  user_id INT,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  date DATETIME DEFAULT CURRENT_TIMESTAMP
   );
-  INSERT INTO rooms (name, user_id) VALUES ('home', 1);
+  INSERT INTO users (name) VALUES ('admin');
+  INSERT INTO users (name) VALUES ('anonymous');
 `;
 
 db.query(sql, err => {

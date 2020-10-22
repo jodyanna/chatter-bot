@@ -16,6 +16,14 @@ export const Section = styled.section`
   overflow: scroll;
 `;
 
+export const StatusText = styled.div`
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  
+  color: #3282b8;
+`;
+
 export const Filler = styled.div`
   position: absolute;
   

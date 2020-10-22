@@ -21,8 +21,6 @@ export const ProfilePic = styled.div`
   
   margin: 0.5em;
   padding: 0;
-  
-  border: #ffffff dashed 2px;
 `;
 
 export const Text = styled.div`
