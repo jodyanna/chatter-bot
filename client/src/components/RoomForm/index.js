@@ -42,10 +42,9 @@ export default function RoomForm(props) {
                  value={text}
       />
       <SubmitButton type="submit"
-                    value={"Create"}
+                    value={"Create Room"}
                     disabled={validateForm()}
       />
-      <PostSuccess isSent={isSent}>Posted</PostSuccess>
     </Form>
   );
 }

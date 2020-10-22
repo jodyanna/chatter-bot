@@ -18,7 +18,8 @@ export default function PostForm(props) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         post: text,
-        room: {id: props.room.room_id}
+        room: {id: props.room.id},
+        user: {id: props.user.id}
       }),
     }).then(() => cleanUpForm())
       .catch(error => console.error('Error:', error));
@@ -50,7 +51,7 @@ export default function PostForm(props) {
       />
       <StatusRow>
         <TextCounter>
-          <span style={{color: validateForm() ? "#ff0000" : "inherit"}}>{count}</span>/255
+          <span style={{color: validateForm() ? "#a83232" : "inherit"}}>{count}</span>/255
         </TextCounter>
         <SubmitButton type="submit"
                       value={"Send"}

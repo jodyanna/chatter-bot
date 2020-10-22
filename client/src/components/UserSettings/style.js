@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   align-items: center;
   justify-content: center;
@@ -13,17 +13,11 @@ export const Container = styled.div`
 
   margin: 0;
   padding: 0;
-`;
-
-export const ProfilePic = styled.div`
-  width: 140px;
-  height: 180px;
   
-  margin: 0.5em;
-  padding: 0;
+  background: #1b262c;
 `;
 
-export const Text = styled.div`
+export const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -38,6 +32,34 @@ export const Text = styled.div`
 `;
 
 export const TextRow = styled.div`
-  margin: 0.5em 0;
+  margin: 0.2em 0;
   padding: 0;
+`;
+
+export const LoginButton = styled.button`
+  margin: 0.5em;
+  padding: 0;
+  
+  border: none;
+  border-radius: 5px;
+  
+  background: none;
+  
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+    
+  color: #3282b8;
+  
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const RedText = styled.span`
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+    
+  color: #a83232;
 `;

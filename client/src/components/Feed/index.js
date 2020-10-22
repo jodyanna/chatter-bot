@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import {Filler, Section, StatusText} from "./style";
+import { Section, StatusText } from "./style";
 import PostCard from "../PostCard";
 
 
@@ -12,7 +12,7 @@ export default function Feed(props) {
       const response = await fetch("http://localhost:9000/posts/recent", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({room: {id: props.room.room_id}})
+        body: JSON.stringify({room: {id: props.room.id}})
       }).catch((error) => console.error('Error:', error));
 
       if (response.ok) {
@@ -24,13 +24,13 @@ export default function Feed(props) {
     };
     fetchData().then(res => setData(res));
     setIsLoading(false);
-  }, [props.room.room_id]);
+  }, [props.room.id]);
 
   const renderPostCards = isLoading => {
     if (isLoading) return "loading..."
     else if (data.posts.length < 1 || data.posts.length === undefined) return <StatusText>This room is empty</StatusText>
     else return data.posts.map((post, index) => {
-      return <PostCard key={index} text={post.content} date={post.date} />
+      return <PostCard key={index} text={post.content} date={post.birth_date} />
     })
   }
 

@@ -4,7 +4,7 @@ const db = require("../dbConnect");
 const sql = `CREATE TABLE rooms (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR(255), 
-  date DATETIME DEFAULT CURRENT_TIMESTAMP,
+  birth_date DATETIME DEFAULT CURRENT_TIMESTAMP,
   user_id INT,
   FOREIGN KEY (user_id) REFERENCES users(id)
   );

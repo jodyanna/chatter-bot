@@ -21,7 +21,7 @@ export default function Header(props) {
         />
         <H2>{props.room}</H2>
       </Row>
-      <HiddenWindow isActive={isActive} isUp={false}>
+      <HiddenWindow isActive={isActive} isUp={false} spacing={"96px"}>
         <RoomNav handlePropsClick={props.handleClick}
                  handleClick={handleClick}
                  isActive={isActive}

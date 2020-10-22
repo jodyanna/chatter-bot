@@ -4,7 +4,7 @@ import { fadeInUp, fadeOutUp, fadeInDown, fadeOutDown } from "../Animations";
 // props.isUp boolean will make the window 'drop up' instead of down.
 export const HiddenWindow = styled.div`
   position: fixed;
-  ${props => props.isUp ? 'bottom: 96px;' : 'top: 96px;'};
+  ${props => props.isUp ? `bottom: ${props.spacing};` : `top: ${props.spacing};`};
   z-index: -1;
 
   display: flex;
@@ -15,7 +15,7 @@ export const HiddenWindow = styled.div`
   justify-content: center;
 
   width: inherit;
-  height: 198px;
+  height: fit-content;
 
   margin: 0;
   padding: 0;

@@ -1,21 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
+const { addUser } = require('../db/users/addUser');
+const { getUser } = require("../db/users/getUser");
+const { getUserPosts } = require("../db/users/getUserPosts");
+const { getUserRooms } = require("../db/users/getUserRooms");
 
-router.get('/', (req, res, next) => {
-  return res.send("Get request received.");
-});
 
 router.post('/', (req, res, next) => {
-  return res.send("Post request received for /users.");
+  getUser(req, res);
 });
 
-router.put('/:id', (req, res, next) => {
-  return res.send(`Put request received for /users/${req.params.id}.`);
+router.post('/signup', (req, res, next) => {
+  addUser(req, res);
 });
 
-router.delete('/:id', (req, res, next) => {
-  return res.send(`Delete request received for /users/${req.params.id}.`);
+router.post('/posts', (req, res, next) => {
+  getUserPosts(req, res);
+});
+
+router.post('/rooms', (req, res, next) => {
+  getUserRooms(req, res);
 });
 
 

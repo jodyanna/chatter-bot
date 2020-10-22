@@ -7,6 +7,18 @@ export default function RoomNav(props) {
   const [ data, setData ] = useState({rooms: []});
 
   useEffect(() => {
+    const fetchAllRooms = async () => {
+      const response = await fetch("http://localhost:9000/rooms/all", {
+        method: 'GET',
+      }).catch((error) => console.error('Error:', error));
+
+      if (response.ok) {
+        const data = await response.json();
+        return Promise.resolve(data)
+      }
+      else return Promise.reject("Could not connect to API.")
+    };
+
     fetchAllRooms().then(res => setData(res));
     setIsLoading(false);
   }, []);
@@ -32,15 +44,3 @@ export default function RoomNav(props) {
 
   )
 }
-
-const fetchAllRooms = async () => {
-  const response = await fetch("http://localhost:9000/rooms/all", {
-    method: 'GET',
-  }).catch((error) => console.error('Error:', error));
-
-  if (response.ok) {
-    const data = await response.json();
-    return Promise.resolve(data)
-  }
-  else return Promise.reject("Could not connect to API.")
-};

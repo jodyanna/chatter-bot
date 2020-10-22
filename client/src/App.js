@@ -28,8 +28,8 @@ const MainPage = styled.div`
 
 
 function App() {
-  const [ currentUser, setCurrentUser ] = useState({name: "anonymous", user_id: "1"});
-  const [ currentRoom, setCurrentRoom ] = useState({name: "no_name", room_id: "1"});
+  const [ currentUser, setCurrentUser ] = useState({name: "anonymous", id: "2"});
+  const [ currentRoom, setCurrentRoom ] = useState({name: "home", id: "1"});
 
   const handleUserChange = user => setCurrentUser(user)
   const handleRoomChange = room => setCurrentRoom(room)
@@ -38,7 +38,7 @@ function App() {
     <MainPage>
       <Header room={currentRoom.name} handleClick={handleRoomChange} />
       <Feed user={currentUser} room={currentRoom} />
-      <Toolbar user={currentUser} room={currentRoom} handleClick={handleUserChange} />
+      <Toolbar user={currentUser} room={currentRoom} setUser={handleUserChange} />
     </MainPage>
   );
 }
