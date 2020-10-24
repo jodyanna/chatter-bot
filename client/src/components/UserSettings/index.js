@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {Container, LoginButton, RedText, TextRow} from "./style";
+import {Container, Button, RedText, TextRow} from "./style";
 import {HiddenWindow} from "../HiddenWindow";
 import UserLoginForm from "../UserLoginForm";
 import UserInfo from "../UserInfo";
@@ -15,6 +15,10 @@ export default function UserSettings(props) {
 
   const handleSignInClick = () => setIsSignInActive(!isSignInActive)
   const handleSignUpClick = () => setIsSignUpActive(!isSignUpActive)
+  const handleSignOut = () => {
+    props.setSignInStatus();
+    props.setUser({name: "anonymous", id: "2"})
+  }
 
   useEffect(() => {
     if (containerRef.current) setSpacing(containerRef.current.offsetHeight)
@@ -26,24 +30,30 @@ export default function UserSettings(props) {
     else return <UserInfo user={props.user} />
   }
 
+  const renderSignInOutButtons = () => {
+    if (props.isSignedIn) return <Button onClick={handleSignOut}>Sign Out</Button>
+    else return <Button onClick={handleSignInClick}>{isSignInActive ? "Cancel" : "Sign In"}</Button>
+  }
+
   return (
     <Container ref={containerRef}>
       <Container>
         {renderUserInfo()}
         <TextRow>
-          <LoginButton onClick={handleSignInClick}>
-            {isSignInActive ? "Cancel" : "Sign In"}
-          </LoginButton>
-          <LoginButton onClick={handleSignUpClick}>
-            Sign Up
-          </LoginButton>
+          {renderSignInOutButtons()}
+          {props.isSignedIn ? "" : <Button onClick={handleSignUpClick}>Sign Up</Button>}
         </TextRow>
       </Container>
       <HiddenWindow isActive={isSignInActive && props.isActive} isUp={true} spacing={spacing + "px"}>
-        <UserLoginForm setUser={props.setUser} close={handleSignInClick}/>
+        <UserLoginForm setUser={props.setUser}
+                       close={handleSignInClick}
+                       setSignInStatus={props.setSignInStatus}
+        />
       </HiddenWindow>
       <HiddenWindow isActive={isSignUpActive && props.isActive} isUp={true} spacing={spacing + "px"}>
-        <UserSignUpForm setUser={props.setUser} close={handleSignUpClick}/>
+        <UserSignUpForm setUser={props.setUser}
+                        close={handleSignUpClick}
+        />
       </HiddenWindow>
     </Container>
   )

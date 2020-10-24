@@ -17,26 +17,12 @@ export const Container = styled.div`
   background: #1b262c;
 `;
 
-export const TextColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  align-items: flex-start;
-  justify-content: center;
-
-  width: 150px;
-  height: 100%;
-
-  margin: 0.5em;
-  padding: 0;
-`;
-
 export const TextRow = styled.div`
   margin: 0.2em 0;
   padding: 0;
 `;
 
-export const LoginButton = styled.button`
+export const Button = styled.button`
   margin: 0.5em;
   padding: 0;
   

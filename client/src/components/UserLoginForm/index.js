@@ -34,6 +34,7 @@ export default function UserLoginForm(props) {
       else props.setUser(res.user[0]);
     })
       .then(() => cleanUpForm())
+      .then(props.setSignInStatus())
       .catch(err => alert(err.message))
   }
 

@@ -68,11 +68,19 @@ export default function Toolbar(props) {
       </ButtonContainer>
 
       <HiddenWindow isActive={isActiveUser} isUp={true} spacing={"96px"}>
-        <UserSettings user={props.user} setUser={props.setUser} isActive={isActiveUser} />
+        <UserSettings user={props.user}
+                      setUser={props.setUser}
+                      isSignedIn={props.isSignedIn}
+                      setSignInStatus={props.setSignInStatus}
+                      isActive={isActiveUser}
+        />
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveEdit} isUp={true} spacing={"96px"}>
-        <PostForm room={props.room} user={props.user} refreshFeed={props.refreshFeed} />
+        <PostForm room={props.room}
+                  user={props.user}
+                  refreshFeed={props.refreshFeed}
+        />
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveRoom} isUp={true} spacing={"96px"}>

@@ -24,6 +24,7 @@ const MainPage = styled.div`
 
 
 function App() {
+  const [ isSignedIn, setIsSignedIn ] = useState(false);
   const [ currentUser, setCurrentUser ] = useState({name: "anonymous", id: "2"});
   const [ currentRoom, setCurrentRoom ] = useState({name: "home", id: "1"});
   // Variables to refresh feeds after forms are sent, doesn't matter if true/false
@@ -31,6 +32,7 @@ function App() {
   const [ roomsRefresh, setRoomsRefresh ] = useState(true);
 
 
+  const handleSignInStatus = () => setIsSignedIn(!isSignedIn)
   const handleUserChange = user => setCurrentUser(user)
   const handleRoomChange = room => setCurrentRoom(room)
   const handleFeedRefresh = () => setFeedRefresh(!feedRefresh)
@@ -38,10 +40,9 @@ function App() {
 
   return (
     <MainPage>
-      <Header
-        room={currentRoom.name}
-        handleClick={handleRoomChange}
-        refresh={roomsRefresh}
+      <Header room={currentRoom.name}
+              handleClick={handleRoomChange}
+              refresh={roomsRefresh}
       />
       <Feed user={currentUser}
             room={currentRoom}
@@ -49,6 +50,8 @@ function App() {
       />
       <Toolbar user={currentUser}
                room={currentRoom}
+               isSignedIn={isSignedIn}
+               setSignInStatus={handleSignInStatus}
                setUser={handleUserChange}
                refreshFeed={handleFeedRefresh}
                refreshRooms={handleRoomsRefresh}
