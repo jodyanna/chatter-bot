@@ -1,19 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Form, Label, TextInput} from './style';
 import { SubmitButton } from "./style";
 
 
 export default function UserSignUpForm(props) {
+  // Form input states
   const [ name, setName ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
   const [ email, setEmail ] = useState("");
+  // all the rest
+  const [ allUsersName, setAllUsersName ] = useState([]);
   const [ isSent, setIsSent ] = useState(false);
+
+  useEffect(() => {
+    const fetchRequest = async () => {
+      const response = await fetch('http://localhost:9000/users/all', {
+        method: 'GET',
+      }).catch(error => console.error('Error:', error));
+      if (response.ok) {
+        const data = await response.json();
+        return Promise.resolve(data)
+      } else return Promise.reject("Could not connect to API.")
+    };
+    fetchRequest().then(res => {
+      let allNames = [];
+      for (let name of res.names) {
+        allNames.push(name.name)
+      }
+      setAllUsersName(allNames)
+    })
+  }, []);
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    const fetchData = async () => {
+    if (allUsersName.includes(name)) {
+      alert(`User name ${name} is already taken.`);
+      return
+    }
+    const fetchRequest = async () => {
       const response = await fetch('http://localhost:9000/users/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -25,14 +50,12 @@ export default function UserSignUpForm(props) {
           }
         })
       }).catch(error => console.error('Error:', error));
-
       if (response.ok) {
         const data = await response.json();
         return Promise.resolve(data)
       } else return Promise.reject("Could not connect to API.")
     };
-
-    fetchData().then(() => cleanUpForm())
+    fetchRequest().then(() => cleanUpForm())
       .catch(err => console.log(err.message))
   }
 
