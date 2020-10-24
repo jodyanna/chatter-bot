@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, TextInput } from './style';
+import {Form, Label, TextInput} from './style';
 import { SubmitButton } from "./style";
 
 
@@ -54,12 +54,12 @@ export default function UserLoginForm(props) {
     <Form
       onSubmit={handleSubmit}
     >
-      <label htmlFor="username">Name:</label>
+      <Label htmlFor="username">Name:</Label>
       <TextInput name={"username"}
                  onChange={handleNameChange}
                  value={nameText}
       />
-      <label htmlFor="password">Password:</label>
+      <Label htmlFor="password">Password:</Label>
       <TextInput name={"password"}
                  onChange={handlePasswordChange}
                  value={passwordText}

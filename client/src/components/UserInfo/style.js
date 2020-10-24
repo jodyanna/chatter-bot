@@ -14,11 +14,22 @@ export const Container = styled.div`
   padding: 0;
 `;
 
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+  
+  width: fit-content;
+
+`;
+
 export const Stats = styled.div`
   display: flex;
   flex-direction: column;
 
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   width: 100%;
@@ -26,4 +37,11 @@ export const Stats = styled.div`
 
   margin: 0;
   padding: 0;
+`;
+
+export const Text = styled.span`
+  font-family: inherit;
+  font-size: inherit;
+  
+  text-align: left;
 `;

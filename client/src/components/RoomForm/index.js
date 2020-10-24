@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, TextInput } from './style';
-import { PostSuccess } from '../PostSuccess';
 import { SubmitButton } from "./style";
 
 

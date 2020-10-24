@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {Container, LoginButton, RedText, TextColumn, TextRow} from "./style";
+import {Container, LoginButton, RedText, TextRow} from "./style";
 import {HiddenWindow} from "../HiddenWindow";
 import UserLoginForm from "../UserLoginForm";
 import UserInfo from "../UserInfo";

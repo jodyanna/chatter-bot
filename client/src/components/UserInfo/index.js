@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Container, Stats} from "./style";
+import {Container, Info, Stats, Text} from "./style";
 
 export default function UserInfo(props) {
   const [ isLoading, setIsLoading ] = useState(true);
@@ -20,7 +20,7 @@ export default function UserInfo(props) {
       }
       else return Promise.reject("Could not connect to API.")
     };
-    fetchUserPosts().then(res => console.log(res));
+    fetchUserPosts().then(res => setNumOfPosts(res.user.length));
 
     const fetchUserRooms = async () => {
       const response = await fetch("http://localhost:9000/users/rooms", {
@@ -35,7 +35,7 @@ export default function UserInfo(props) {
       }
       else return Promise.reject("Could not connect to API.")
     };
-    fetchUserRooms().then(res => console.log(res));
+    fetchUserRooms().then(res => setNumOfRooms(res.user.length));
 
 
     setIsLoading(false);
@@ -45,17 +45,19 @@ export default function UserInfo(props) {
     if (isLoading) return "Loading..."
     else return (
       <Stats>
-        <span>Posts: {numOfPosts}</span>
-        <span>Rooms: {numOfRooms}</span>
+        <Text>Posts: {numOfPosts}</Text>
+        <Text>Rooms: {numOfRooms}</Text>
       </Stats>
     )
   }
 
   return (
     <Container>
-      <span>{props.user.name}</span>
-      <span>Joined: {props.user.birth_date}</span>
-      {renderUserStats()}
+      <Info>
+        <Text>Name: {props.user.name}</Text>
+        <Text>Joined: {props.user.birth_date}</Text>
+        {renderUserStats()}
+      </Info>
     </Container>
   )
 }

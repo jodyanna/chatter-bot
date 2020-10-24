@@ -17,13 +17,18 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  margin: 0.5em 0 0 0;
+  padding: 0;
+  
+  font-family: inherit;
+  font-size: inherit;
   
 `;
 
 export const TextInput = styled.input`
   type: text;
   
-  margin: 1em 0 0.2em 0;
+  margin: 0 0 0.2em 0;
   padding: 0.3em;
   
   font-family: inherit;

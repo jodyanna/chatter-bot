@@ -8,7 +8,7 @@ exports.getUserRooms = (req, res) => {
     res.json({
       status: "200",
       user: data,
-      message: "Get user successful."
+      message: "Get user rooms successful."
     });
   });
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, TextInput } from './style';
+import {Form, Label, TextInput} from './style';
 import { SubmitButton } from "./style";
 
 
@@ -32,11 +32,8 @@ export default function UserSignUpForm(props) {
       } else return Promise.reject("Could not connect to API.")
     };
 
-    fetchData().then(res => {
-      console.log(res)
-    })
-      .then(() => cleanUpForm())
-      .catch(err => alert(err.message))
+    fetchData().then(() => cleanUpForm())
+      .catch(err => console.log(err.message))
   }
 
   const handleNameChange = event => setName(event.target.value);
@@ -59,22 +56,22 @@ export default function UserSignUpForm(props) {
     <Form
       onSubmit={handleSubmit}
     >
-      <label htmlFor="username">Name:</label>
+      <Label htmlFor="username">Name:</Label>
       <TextInput name={"username"}
                  onChange={handleNameChange}
                  value={name}
       />
-      <label htmlFor="password">Password:</label>
+      <Label htmlFor="password">Password:</Label>
       <TextInput name={"password"}
                  onChange={handlePasswordChange}
                  value={password}
       />
-      <label htmlFor="confirmPassword">Confirm Password:</label>
+      <Label htmlFor="confirmPassword">Confirm Password:</Label>
       <TextInput name={"confirmPassword"}
                  onChange={handleConfirmPasswordChange}
                  value={confirmPassword}
       />
-      <label htmlFor="email">Email:</label>
+      <Label htmlFor="email">Email:</Label>
       <TextInput name={"email"}
                  onChange={handleEmailChange}
                  value={email}

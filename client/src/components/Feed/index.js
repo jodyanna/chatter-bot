@@ -24,7 +24,7 @@ export default function Feed(props) {
     };
     fetchData().then(res => setData(res));
     setIsLoading(false);
-  }, [props.room.id]);
+  }, [props.room.id, props.refresh]);
 
   const renderPostCards = isLoading => {
     if (isLoading) return "loading..."

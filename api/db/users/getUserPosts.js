@@ -8,7 +8,7 @@ exports.getUserPosts = (req, res) => {
     res.json({
       status: "200",
       user: data,
-      message: "Get user successful."
+      message: "Get user posts successful."
     });
   });
 }

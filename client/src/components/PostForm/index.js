@@ -22,6 +22,7 @@ export default function PostForm(props) {
         user: {id: props.user.id}
       }),
     }).then(() => cleanUpForm())
+      .then(() => props.refreshFeed())
       .catch(error => console.error('Error:', error));
   }
 
@@ -31,7 +32,7 @@ export default function PostForm(props) {
   }
 
   const cleanUpForm = () => {
-    // Init form and show success message
+    // Initialize states
     setText("");
     setCount(0);
     setIsSent(true);

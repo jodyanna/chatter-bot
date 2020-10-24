@@ -20,8 +20,6 @@ export const HiddenWindow = styled.div`
   margin: 0;
   padding: 0;
   
-  border-radius: 5px 5px 0 0;
-  
   background: #1b262c;
   
   transform: translateY(0);

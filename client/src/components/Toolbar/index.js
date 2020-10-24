@@ -72,7 +72,7 @@ export default function Toolbar(props) {
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveEdit} isUp={true} spacing={"96px"}>
-        <PostForm room={props.room} user={props.user} />
+        <PostForm room={props.room} user={props.user} refreshFeed={props.refreshFeed} />
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveRoom} isUp={true} spacing={"96px"}>
