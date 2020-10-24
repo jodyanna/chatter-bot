@@ -21,7 +21,7 @@ export default function RoomNav(props) {
 
     fetchAllRooms().then(res => setData(res));
     setIsLoading(false);
-  }, []);
+  }, [props.refresh]);
 
   const handleClick = room => {
     props.handlePropsClick(room);

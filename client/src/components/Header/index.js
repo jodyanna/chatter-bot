@@ -25,6 +25,7 @@ export default function Header(props) {
         <RoomNav handlePropsClick={props.handleClick}
                  handleClick={handleClick}
                  isActive={isActive}
+                 refresh={props.refresh}
         />
       </HiddenWindow>
     </Container>

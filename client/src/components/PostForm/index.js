@@ -22,7 +22,7 @@ export default function PostForm(props) {
         user: {id: props.user.id}
       }),
     }).then(() => cleanUpForm())
-      .then(() => props.refreshFeed())
+      .then(props.refreshFeed())
       .catch(error => console.error('Error:', error));
   }
 

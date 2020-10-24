@@ -76,7 +76,7 @@ export default function Toolbar(props) {
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveRoom} isUp={true} spacing={"96px"}>
-        <RoomForm />
+        <RoomForm refreshRooms={props.refreshRooms} />
       </HiddenWindow>
 
       <HiddenWindow isActive={isActiveSettings} isUp={true} spacing={"96px"}>

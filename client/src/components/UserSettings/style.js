@@ -57,6 +57,8 @@ export const LoginButton = styled.button`
 `;
 
 export const RedText = styled.span`
+  margin: 0.5em 0 0 0;
+
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;

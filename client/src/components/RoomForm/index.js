@@ -16,6 +16,7 @@ export default function RoomForm(props) {
         room: {name: text}
       }),
     }).then(() => cleanUpForm())
+      .then(props.refreshRooms())
       .catch(error => console.error('Error:', error));
   }
 
