@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import {Container, Button, RedText, TextRow} from "./style";
-import {HiddenWindow} from "../HiddenWindow";
+import { Container, Button, RedText, TextRow } from "./style";
+import { HiddenWindow } from "../HiddenWindow";
 import UserLoginForm from "../UserLoginForm";
 import UserInfo from "../UserInfo";
 import UserSignUpForm from "../UserSignUpFrom";
@@ -22,7 +22,7 @@ export default function UserSettings(props) {
 
   useEffect(() => {
     if (containerRef.current) setSpacing(containerRef.current.offsetHeight)
-  })
+  }, [])
 
   const renderUserInfo = () => {
     // User id's 1 and 2 are reserved, user made accounts start at 3
@@ -41,7 +41,7 @@ export default function UserSettings(props) {
         {renderUserInfo()}
         <TextRow>
           {renderSignInOutButtons()}
-          {props.isSignedIn ? "" : <Button onClick={handleSignUpClick}>Sign Up</Button>}
+          {props.isSignedIn ? "" : <Button onClick={handleSignUpClick}>{isSignUpActive ? "Cancel" : "Sign Up"}</Button>}
         </TextRow>
       </Container>
       <HiddenWindow isActive={isSignInActive && props.isActive} isUp={true} spacing={spacing + "px"}>

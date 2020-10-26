@@ -15,7 +15,9 @@ export const Container = styled.div`
   height: 100px;
 `;
 
-export const ButtonContainer = styled.div`  
+export const ButtonContainer = styled.div`
+  z-index: 2;
+   
   display: flex;
   flex-direction: row;
   

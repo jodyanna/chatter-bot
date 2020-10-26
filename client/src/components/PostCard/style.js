@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: block;
   
   width: 90%;
   height: fit-content;
   
   margin: 1em;
-  padding: 1vw;
+  padding: 0.5em;
   
   background: #3282b8;
   

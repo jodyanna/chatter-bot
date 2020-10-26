@@ -37,7 +37,7 @@ export const StatusRow = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  width: 95%;
+  width: 90%;
   height: 40px;
   
   margin: 0;

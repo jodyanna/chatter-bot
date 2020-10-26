@@ -21,6 +21,8 @@ export const Container = styled.header`
 `;
 
 export const Row = styled.div`
+  z-index: 2;
+  
   display: flex;
   flex-direction: row;
   

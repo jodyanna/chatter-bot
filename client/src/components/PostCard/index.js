@@ -5,8 +5,8 @@ import { Container } from "./style";
 export default function PostCard(props) {
   return (
     <Container>
-      <span>{props.text}</span>
-      <span>{props.date}</span>
+      <div>{props.text}</div>
+      <div>{props.date}</div>
     </Container>
   );
 }
