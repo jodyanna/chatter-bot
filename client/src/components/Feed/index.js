@@ -47,7 +47,7 @@ export default function Feed(props) {
     setIsLoading(false);
   }, [props.room.id, props.refresh]);
 
-  const renderPostCards = isLoading => {
+  const renderPostCards = () => {
     if (isLoading) return "loading..."
     else if (data.posts.length < 1 || data.posts.length === undefined) return <StatusText>This room is empty</StatusText>
     else return data.posts.map((post, index) => {
@@ -57,7 +57,7 @@ export default function Feed(props) {
 
   return (
     <Section>
-      {renderPostCards(isLoading)}
+      {renderPostCards()}
     </Section>
   );
 }
