@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {Form, Label, TextInput} from './style';
 import { SubmitButton } from "./style";
 
-
 export default function UserSignUpForm(props) {
   // Form input states
   const [ name, setName ] = useState("");
@@ -11,7 +10,6 @@ export default function UserSignUpForm(props) {
   const [ email, setEmail ] = useState("");
   // all the rest
   const [ allUsersName, setAllUsersName ] = useState([]);
-  const [ isSent, setIsSent ] = useState(false);
 
   useEffect(() => {
     const fetchRequest = async () => {
@@ -25,7 +23,7 @@ export default function UserSignUpForm(props) {
     };
     fetchRequest().then(res => {
       let allNames = [];
-      for (let name of res.names) {
+      for (let name of res.users) {
         allNames.push(name.name)
       }
       setAllUsersName(allNames)
@@ -59,9 +57,9 @@ export default function UserSignUpForm(props) {
       .catch(err => console.log(err.message))
   }
 
-  const handleNameChange = event => setName(event.target.value);
-  const handlePasswordChange = event => setPassword(event.target.value);
-  const handleConfirmPasswordChange = event => setConfirmPassword(event.target.value);
+  const handleNameChange = event => setName(event.target.value)
+  const handlePasswordChange = event => setPassword(event.target.value)
+  const handleConfirmPasswordChange = event => setConfirmPassword(event.target.value)
   const handleEmailChange = event => setEmail(event.target.value)
 
   const validateForm = () => name.length < 1 || name.length > 50 || password.length < 1 || password !== confirmPassword
@@ -70,8 +68,6 @@ export default function UserSignUpForm(props) {
     setName("");
     setPassword("");
     setEmail("");
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 1000);
     props.close();
   }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Label, TextInput} from './style';
+import { Form, Label, TextInput } from './style';
 import { SubmitButton } from "./style";
 
 
@@ -10,7 +10,6 @@ export default function UserLoginForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-
     const fetchData = async () => {
       const response = await fetch('http://localhost:9000/users/', {
         method: 'POST',
@@ -22,13 +21,11 @@ export default function UserLoginForm(props) {
           }
         })
       }).catch(error => console.error('Error:', error));
-
       if (response.ok) {
         const data = await response.json();
         return Promise.resolve(data)
       } else return Promise.reject("Could not connect to API.")
     };
-
     fetchData().then(res => {
       if (res.user.length < 1) throw new Error("Could not find user")
       else props.setUser(res.user[0]);
