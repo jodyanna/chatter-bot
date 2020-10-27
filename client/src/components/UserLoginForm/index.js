@@ -6,7 +6,6 @@ import { SubmitButton } from "./style";
 export default function UserLoginForm(props) {
   const [ nameText, setNameText ] = useState("");
   const [ passwordText, setPasswordText ] = useState("");
-  const [ isSent, setIsSent ] = useState(false);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,15 +23,14 @@ export default function UserLoginForm(props) {
       if (response.ok) {
         const data = await response.json();
         return Promise.resolve(data)
-      } else return Promise.reject("Could not connect to API.")
+      }
+      else if (response.status === 401) return Promise.reject(new Error("Name or password is incorrect."))
+      else return Promise.reject("Could not connect to API.")
     };
-    fetchData().then(res => {
-      if (res.user.length < 1) throw new Error("Could not find user")
-      else props.setUser(res.user[0]);
-    })
+    fetchData().then(res => props.setUser(res.user[0]))
       .then(() => cleanUpForm())
-      .then(props.setSignInStatus())
-      .catch(err => alert(err.message))
+      .then(() => props.setSignInStatus())
+      .catch(err => alert(err))
   }
 
   const handleNameChange = event => setNameText(event.target.value);
@@ -43,8 +41,6 @@ export default function UserLoginForm(props) {
   const cleanUpForm = () => {
     setNameText("");
     setPasswordText("");
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 1000);
     props.close();
   }
 
