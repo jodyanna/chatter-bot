@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: block;
   
   width: 90%;
-  height: fit-content;
   
   margin: 1em;
   padding: 0.5em;

@@ -27,7 +27,6 @@ export default function RoomForm(props) {
   const validateForm = () => text.length < 1 || text.length > 50
 
   const cleanUpForm = () => {
-    // Init form and show success message
     setText("");
     setIsSent(true);
     setTimeout(() => setIsSent(false), 2000);

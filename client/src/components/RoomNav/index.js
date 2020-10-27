@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Container, List, ListItem} from "./style";
+import { Container, List, ListItem } from "./style";
 
 
 export default function RoomNav(props) {
