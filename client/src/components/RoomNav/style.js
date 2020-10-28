@@ -45,5 +45,4 @@ export const ListItem = styled.li`
   color: #3282b8;
 
   list-style: none;
- 
 `;

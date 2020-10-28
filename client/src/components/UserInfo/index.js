@@ -38,7 +38,6 @@ export default function UserInfo(props) {
     };
     fetchUserRooms().then(res => setNumOfRooms(res.user.length));
 
-
     setIsLoading(false);
   }, []);
 

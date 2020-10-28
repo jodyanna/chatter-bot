@@ -1,7 +1,6 @@
 import React from 'react';
-import {Container, GreyText, PostBody, PostFooter, SmGreyText} from "./style";
 import { dateFormat, timeFormat } from "../../util";
-
+import { Container, GreyText, PostBody, PostFooter, SmGreyText } from "./style";
 
 
 export default function PostCard(props) {

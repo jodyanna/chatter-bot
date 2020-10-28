@@ -6,9 +6,6 @@ export const Button = styled.button`
   
   align-items: center;
   justify-content: center;
-
-  width: auto%;
-  height: auto%;
   
   margin: 0 0.5em;
   padding: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
-import { Section, StatusText } from "./style";
 import PostCard from "../PostCard";
+import { Section, StatusText } from "./style";
 
 
 export default function Feed(props) {

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Container, Button, RedText, TextRow } from "./style";
-import { HiddenWindow } from "../HiddenWindow";
 import UserLoginForm from "../UserLoginForm";
 import UserInfo from "../UserInfo";
 import UserSignUpForm from "../UserSignUpFrom";
+import { Container, Button, RedText, TextRow } from "./style";
+import { HiddenWindow } from "../HiddenWindow";
 
 
 export default function UserSettings(props) {

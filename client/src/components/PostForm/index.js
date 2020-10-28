@@ -5,11 +5,8 @@ import { Form, TextArea, SubmitButton, StatusRow, TextCounter } from './style';
 export default function PostForm(props) {
   const [ count, setCount ] = useState(0);
   const [ text, setText ] = useState("");
-  const [ isSent, setIsSent ] = useState(false);
 
-  const validateForm = () => {
-    return count < 1 || count > 255
-  }
+  const validateForm = () => count < 1 || count > 255
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -32,11 +29,8 @@ export default function PostForm(props) {
   }
 
   const cleanUpForm = () => {
-    // Initialize states
     setText("");
     setCount(0);
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 2000);
   }
 
   return (

@@ -18,8 +18,8 @@ export default function RoomNav(props) {
       }
       else return Promise.reject("Could not connect to API.")
     };
-
     fetchAllRooms().then(res => setData(res));
+
     setIsLoading(false);
   }, [props.refresh]);
 

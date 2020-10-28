@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-
 import Header from "./components/Header";
 import Toolbar from "./components/Toolbar";
 import Feed from "./components/Feed";
@@ -23,7 +22,7 @@ const MainPage = styled.div`
 `;
 
 
-function App() {
+export default function App() {
   const [ isSignedIn, setIsSignedIn ] = useState(false);
   const [ currentUser, setCurrentUser ] = useState({name: "anonymous", id: "2"});
   const [ currentRoom, setCurrentRoom ] = useState({name: "home", id: "1"});
@@ -59,5 +58,3 @@ function App() {
     </MainPage>
   );
 }
-
-export default App;

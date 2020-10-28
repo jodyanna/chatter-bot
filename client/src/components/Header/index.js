@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Container, H2, Row } from "./style";
-import arrow from "../../img/icons/expand-arrow.png";
-
 import RoomNav from "../RoomNav";
 import IconButton from "../IconButton";
+import { Container, H2, Row } from "./style";
 import { HiddenWindow } from "../HiddenWindow";
+import arrow from "../../img/icons/expand-arrow.png";
 
 
 export default function Header(props) {

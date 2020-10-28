@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
   width: 90%;
 `;
@@ -31,7 +32,6 @@ export const PostFooter = styled.div`
   width: 100%;
   
   margin: 0 0 1em 0;
-
 `;
 
 export const GreyText = styled.span`

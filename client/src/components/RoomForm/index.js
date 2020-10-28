@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Form, TextInput } from './style';
-import { SubmitButton } from "./style";
+import { Form, TextInput, SubmitButton } from './style';
 
 
 export default function RoomForm(props) {
   const [ text, setText ] = useState("");
-  const [ isSent, setIsSent ] = useState(false);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -20,17 +18,11 @@ export default function RoomForm(props) {
       .catch(error => console.error('Error:', error));
   }
 
-  const handleChange = event => {
-    setText(event.target.value);
-  }
+  const handleChange = event => setText(event.target.value);
 
   const validateForm = () => text.length < 1 || text.length > 50
 
-  const cleanUpForm = () => {
-    setText("");
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 2000);
-  }
+  const cleanUpForm = () => setText("");
 
   return (
     <Form

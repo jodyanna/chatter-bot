@@ -21,7 +21,7 @@ export function dateFormat(date) {
   const month = dates.split('-')[1];
   const day = dates.split('-')[2];
 
-  return ` ${monthNames[month]} ${day}, ${year}`
+  return `${monthNames[month]} ${day}, ${year}`
 }
 
 export function timeFormat(time) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {Form, Label, TextInput} from './style';
-import { SubmitButton } from "./style";
+import { Form, Label, TextInput, SubmitButton } from './style';
+
 
 export default function UserSignUpForm(props) {
   // Form input states
