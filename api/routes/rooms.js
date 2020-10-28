@@ -4,6 +4,7 @@ const router = express.Router();
 const { getAllRooms } = require('../db/rooms/getAllRooms');
 const { addRoom } = require('../db/rooms/addRoom');
 
+
 router.get('/all', (req, res, next) => {
   getAllRooms(req, res);
 });

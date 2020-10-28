@@ -16,5 +16,4 @@ exports.getUser = (req, res) => {
     }
     else res.status(401).send('Unauthorized')
   });
-
 }

@@ -6,7 +6,6 @@ const { getRandPosts } = require("../db/posts/getRandPosts");
 const { getRecentPosts } = require('../db/posts/getRecentPosts');
 
 
-
 router.get('/random', (req, res, next) => {
   getRandPosts(req, res);
 });
@@ -14,7 +13,6 @@ router.get('/random', (req, res, next) => {
 router.post('/recent', (req, res, next) => {
   getRecentPosts(req, res);
 });
-
 
 router.post('/add', (req, res, next) => {
   addPost(req, res);

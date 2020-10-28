@@ -3,8 +3,8 @@ const router = express.Router();
 
 const { addUser } = require('../db/users/addUser');
 const { getUser } = require("../db/users/getUser");
-const { getUserPosts } = require("../db/users/getUserPosts");
-const { getUserRooms } = require("../db/users/getUserRooms");
+const { getUserPosts } = require("../db/posts/getUserPosts");
+const { getUserRooms } = require("../db/rooms/getUserRooms");
 const { getAllUsersName } = require("../db/users/getAllUsersName");
 
 
