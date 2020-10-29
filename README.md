@@ -4,7 +4,13 @@ Create posts and chat rooms with this web app.
 ## Features
 - Create custom posts up to 255 characters in length
 - Create custom rooms for topical discussion
-- Create user accounts with password hashing
+- Create user accounts
+
+## How To Use
+Click the buttons in the toolbar located at the foot of the page to open forms for user sign-up, log-in, posting, and creating chat rooms.
+Navigate chat rooms using the drop down menu located at the top of the page.
+The rest of the web page is a scrollable feed showing all posts grouped in the currently selected room.
+The 'Home' room serves as a general landing for when users first navigate to the site.
 
 ## Technology
 Frontend
@@ -38,7 +44,7 @@ The HiddenWindow component reveals all forms and can be assigned to drop up or d
 Keyframe animations provide the transitions for when the HiddenWindow's child components are active.
 
 ## Backend
-Backend is a REST API set up with the express-generator command using a MySQL database.
+Backend is a REST API set up with the express-generator command storing data in a MySQL database.
 
 #### Routing
 HTTP Request URLs are separated by feature. 
@@ -50,3 +56,7 @@ All data queried from the database returns to the frontend as JSON.
 Database consists of three tables to store data for each corresponding feature.
 The user_id and room_id foreign keys connect posts to specific chat rooms and users for sorting and displaying.
 All user passwords are hashed with the bcrypt library for secure storage.
+
+## TODO
+- Options to edit/delete posts for signed-up users
+- General app settings
