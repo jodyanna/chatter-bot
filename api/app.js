@@ -3,12 +3,11 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
+const path = require('path');
 
-const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const roomsRouter = require('./routes/rooms');
-const testAPIRouter = require('./routes/testAPI');
 
 const app = express();
 
@@ -20,13 +19,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 /**
+ Serve React App
+ */
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
+/**
   API routes
  */
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/rooms', roomsRouter);
-app.use('/testAPI', testAPIRouter);
 
 
 // catch 404 and forward to error handler

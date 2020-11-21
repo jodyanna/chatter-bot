@@ -6,5 +6,6 @@
 .DS_Store
 .idea/
 .env
+client/build
 
 ./client/src/img/pathfinder.jpg
