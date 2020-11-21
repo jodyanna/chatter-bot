@@ -10,7 +10,7 @@ export default function PostForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch('http://localhost:9000/posts/add', {
+    fetch('/posts/add', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

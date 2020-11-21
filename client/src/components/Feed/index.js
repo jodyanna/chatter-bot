@@ -10,7 +10,7 @@ export default function Feed(props) {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:9000/posts/recent", {
+      const response = await fetch("/posts/recent", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({room: {id: props.room.id}})
@@ -25,7 +25,7 @@ export default function Feed(props) {
     fetchPosts().then(res => setData(res));
 
     const fetchUsers = async () => {
-      const response = await fetch("http://localhost:9000/users/all", {
+      const response = await fetch("/users/all", {
         method: 'GET',
       }).catch((error) => console.error('Error:', error));
       if (response.ok) {

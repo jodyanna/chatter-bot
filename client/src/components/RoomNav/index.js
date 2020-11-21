@@ -8,7 +8,7 @@ export default function RoomNav(props) {
 
   useEffect(() => {
     const fetchAllRooms = async () => {
-      const response = await fetch("http://localhost:9000/rooms/all", {
+      const response = await fetch("/rooms/all", {
         method: 'GET',
       }).catch((error) => console.error('Error:', error));
 

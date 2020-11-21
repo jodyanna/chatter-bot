@@ -9,7 +9,7 @@ export default function UserInfo(props) {
 
   useEffect(() => {
     const fetchUserPosts = async () => {
-      const response = await fetch("http://localhost:9000/users/posts", {
+      const response = await fetch("/users/posts", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({user: {id: props.user.id}})
@@ -24,7 +24,7 @@ export default function UserInfo(props) {
     fetchUserPosts().then(res => setNumOfPosts(res.user.length));
 
     const fetchUserRooms = async () => {
-      const response = await fetch("http://localhost:9000/users/rooms", {
+      const response = await fetch("/users/rooms", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({user: {id: props.user.id}})

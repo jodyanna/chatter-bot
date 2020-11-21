@@ -13,7 +13,7 @@ export default function UserSignUpForm(props) {
 
   useEffect(() => {
     const fetchRequest = async () => {
-      const response = await fetch('http://localhost:9000/users/all', {
+      const response = await fetch('/users/all', {
         method: 'GET',
       }).catch(error => console.error('Error:', error));
       if (response.ok) {
