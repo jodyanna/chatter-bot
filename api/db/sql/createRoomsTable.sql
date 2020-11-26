@@ -4,5 +4,5 @@ CREATE TABLE rooms (
   birth_date DATETIME DEFAULT CURRENT_TIMESTAMP,
   user_id INT,
   FOREIGN KEY (user_id) REFERENCES users(id)
-  );
-  INSERT INTO rooms (name, user_id) VALUES ('home', 1);
+);
+INSERT INTO rooms (name, user_id) VALUES ('home', 1);

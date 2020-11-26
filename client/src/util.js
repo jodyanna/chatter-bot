@@ -1,3 +1,4 @@
+import moment from "moment";
 
 export function dateFormat(date) {
   const monthNames = {
@@ -32,4 +33,10 @@ export function timeFormat(time) {
   if (hour === '12') return `${hour}:${minute}pm`
   else if (parseInt(hour) > 12) return `${hour - 12}:${minute}pm`
   else return `${hour - 0}:${minute}am`
+}
+
+export const formatDatetime = date => {
+  const timezoneOffset = new Date().getTimezoneOffset();
+
+  return moment(date).add(timezoneOffset, 'm').toDate().toLocaleString()
 }

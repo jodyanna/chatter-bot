@@ -7,7 +7,8 @@ const conn = mysql.createConnection({
   password : process.env.DB_PASSWORD,
   database : process.env.DB_NAME,
   port: process.env.DB_PORT,
-  dateStrings: true
+  dateStrings: true,
+  timezone : "+00:00"
 });
 
 module.exports = conn;

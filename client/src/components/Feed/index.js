@@ -51,7 +51,10 @@ export default function Feed(props) {
     if (isLoading) return "loading..."
     else if (data.posts.length < 1 || data.posts.length === undefined) return <StatusText>This room is empty</StatusText>
     else return data.posts.map((post, index) => {
-      return <PostCard key={index} post={post} users={users} />
+      return <PostCard key={index}
+                       post={post}
+                       users={users}
+      />
     })
   }
 

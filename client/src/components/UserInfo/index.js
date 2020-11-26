@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Info, Stats, Text } from "./style";
-import { dateFormat } from "../../util";
+import { formatDatetime } from "../../util";
 
 export default function UserInfo(props) {
   const [ isLoading, setIsLoading ] = useState(true);
@@ -55,7 +55,7 @@ export default function UserInfo(props) {
     <Container>
       <Info>
         <Text>Name: {props.user.name}</Text>
-        <Text>Joined: {dateFormat(props.user.birth_date)}</Text>
+        <Text>Joined: {formatDatetime(props.user.birth_date)}</Text>
         {renderUserStats()}
       </Info>
     </Container>
