@@ -13,8 +13,14 @@ export default function UserSettings(props) {
 
   const containerRef = useRef(null);
 
-  const handleSignInClick = () => setIsSignInActive(!isSignInActive)
-  const handleSignUpClick = () => setIsSignUpActive(!isSignUpActive)
+  const handleSignInClick = () => {
+    if (isSignUpActive) setIsSignUpActive(!isSignUpActive)
+    setIsSignInActive(!isSignInActive)
+  }
+  const handleSignUpClick = () => {
+    if (isSignInActive) setIsSignInActive(!isSignInActive)
+    setIsSignUpActive(!isSignUpActive)
+  }
   const handleSignOut = () => {
     props.setSignInStatus();
     props.setUser({name: "anonymous", id: "2"})
