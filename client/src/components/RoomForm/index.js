@@ -31,7 +31,7 @@ export default function RoomForm(props) {
       alert(`Room '${text}' already exists.`);
       return
     }
-    fetch('http://localhost:9000/rooms/add', {
+    fetch('/rooms/add', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
