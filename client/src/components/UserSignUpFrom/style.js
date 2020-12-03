@@ -26,8 +26,6 @@ export const Label = styled.label`
 `;
 
 export const TextInput = styled.input`
-  type: text;
-  
   margin: 0 0 0.2em 0;
   padding: 0.3em;
   

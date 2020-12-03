@@ -54,7 +54,8 @@ export default function UserLoginForm(props) {
                  value={nameText}
       />
       <Label htmlFor="password">Password:</Label>
-      <TextInput name={"password"}
+      <TextInput type={"password"}
+                 name={"password"}
                  onChange={handlePasswordChange}
                  value={passwordText}
       />

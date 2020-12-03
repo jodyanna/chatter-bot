@@ -37,7 +37,7 @@ export default function UserSignUpForm(props) {
       return
     }
     const fetchRequest = async () => {
-      const response = await fetch('http://localhost:9000/users/signup', {
+      const response = await fetch('/users/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -76,22 +76,26 @@ export default function UserSignUpForm(props) {
       onSubmit={handleSubmit}
     >
       <Label htmlFor="username">Name:</Label>
-      <TextInput name={"username"}
+      <TextInput type={"text"}
+                 name={"username"}
                  onChange={handleNameChange}
                  value={name}
       />
       <Label htmlFor="password">Password:</Label>
-      <TextInput name={"password"}
+      <TextInput type={"password"}
+                 name={"password"}
                  onChange={handlePasswordChange}
                  value={password}
       />
       <Label htmlFor="confirmPassword">Confirm Password:</Label>
-      <TextInput name={"confirmPassword"}
+      <TextInput type={"password"}
+                 name={"confirmPassword"}
                  onChange={handleConfirmPasswordChange}
                  value={confirmPassword}
       />
       <Label htmlFor="email">Email:</Label>
-      <TextInput name={"email"}
+      <TextInput type={"email"}
+                 name={"email"}
                  onChange={handleEmailChange}
                  value={email}
       />
