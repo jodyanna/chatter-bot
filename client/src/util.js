@@ -38,5 +38,5 @@ export function timeFormat(time) {
 export const formatDatetime = date => {
   const timezoneOffset = new Date().getTimezoneOffset();
 
-  return moment(date).add(timezoneOffset, 'm').toDate().toLocaleString()
+  return moment(date).add(-timezoneOffset, 'm').toDate().toLocaleString()
 }
