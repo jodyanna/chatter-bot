@@ -15,8 +15,8 @@ export default function PostForm(props) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         post: text,
-        room: {id: props.room.id},
-        user: {id: props.user.id}
+        roomID: props.room.id,
+        userID: props.user.id
       }),
     }).then(() => cleanUpForm())
       .then(props.refreshFeed())
