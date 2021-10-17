@@ -23,7 +23,7 @@ export default function UserSignUpForm(props) {
     };
     fetchRequest().then(res => {
       let allNames = [];
-      for (let name of res.users) {
+      for (let name of res.body) {
         allNames.push(name.name)
       }
       setAllUsersName(allNames)

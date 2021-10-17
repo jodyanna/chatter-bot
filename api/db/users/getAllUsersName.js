@@ -6,7 +6,7 @@ exports.getAllUsersName = (req, res) => {
     if (err) throw err;
     res.json({
       status: "200",
-      users: data,
+      body: data,
       message: "Get user successful."
     });
   });

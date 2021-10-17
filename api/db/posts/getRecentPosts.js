@@ -7,7 +7,7 @@ exports.getRecentPosts = (req, res) => {
     if (err) throw err;
     res.json({
       status: "200",
-      posts: data,
+      body: data,
       message: "Get recent post successful."
     });
   });
